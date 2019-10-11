@@ -1,0 +1,14 @@
+{
+    "manifest_version":1,
+    "name":"FB Reaction",
+    "version":"1.0",
+    "description":"Get reaction of a FB post",
+    "background":{
+        "scripts":["eventPage.js"],
+        "persistent":false
+    },
+    "permissions":[
+        "tabs",
+        "contextMenus"
+    ]
+}
