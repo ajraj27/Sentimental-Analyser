@@ -30,13 +30,31 @@ import re
 
 tweets = pd.read_csv('/content/sentiment140.csv',encoding='latin-1')
 
-
-
 tweets.columns = ['label','userid','time','no','username','message']
 
-tweets.sample(frac=1,replace=True)
+tweets = tweets.sample(frac=1)
 
 tweets = tweets.head(75000)
 
+tweets = tweets.drop(columns=['time','no','userid'])
+
+tweets = tweets.reset_index()
+
+tweets = tweets.drop(columns = ['index'])
+
+tweets
+
+Y = tweets.label
+
+X = tweets.drop(columns = ['label'])
+
 from sklearn.model_selection import train_test_split
+X_train, X_test ,Y_train, Y_test = train_test_split(X, Y,test_size=0.15)
+
+print(X_train.size)
+print(X_test.size)
+print(Y_test.size)
+print(Y_train.size)
+
+
 
