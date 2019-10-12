@@ -1,8 +1,11 @@
 {
-    "manifest_version":1,
+    "manifest_version":2,
     "name":"FB Reaction",
     "version":"1.0",
     "description":"Get reaction of a FB post",
+    "browser_action":{
+        "default_popup":"popup.html"
+    },
     "background":{
         "scripts":["eventPage.js"],
         "persistent":false
