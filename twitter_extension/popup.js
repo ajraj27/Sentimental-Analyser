@@ -2,9 +2,13 @@ chrome.webRequest.onBeforeRequest.addListener(
 	function(details){
 		if(details.url.includes("statuses/update.json"))
 		{
-			console.log(details.requestBody.formData.status[0]);	
+			var post_data = details.requestBody.formData.status[0]
+			console.log(details.requestBody.formData.status[0]);
+			return {postMade : post_data};
 		}
-        return {cancel: details.requestBody};
+		else
+			return {postMade : details.requestBody};
+        
     },
     {urls: ["<all_urls>"]},
     ["requestBody"]

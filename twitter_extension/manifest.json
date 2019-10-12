@@ -1,6 +1,6 @@
 {
-	"name":"Tamper",
-	"description":"tamping",
+	"name":"Tweecy",
+	"description":"sending twitter post made to back-end server",
 	"version":"1",
 	"manifest_version":2,
 	"permissions": [
